@@ -4,4 +4,8 @@ FROM alpine:${VERSION}
 RUN apk update \
     && apk add --no-cache nodejs yarn git ffmpeg
 
+ADD test.sh .
+RUN chmod +x ./test.sh
+RUN ./test.sh
+
 CMD ["/bin/sh"]
