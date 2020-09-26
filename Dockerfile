@@ -5,7 +5,7 @@ RUN apk update \
     && apk add --no-cache nodejs yarn git ffmpeg
 
 ADD test.sh .
-RUN chmod +x ./test.sh
-RUN ./test.sh
+RUN chmod +x ./test.sh \
+    ./test.sh
 
 CMD ["/bin/sh"]
